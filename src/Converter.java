@@ -34,6 +34,7 @@ public class Converter {
     // Utility which converts CSV to ArrayList using Split Operation
     public static LinkedList Converter(String newCSV) {
         LinkedList llist = new LinkedList();
+        Stack stackie = new Stack();
         ArrayList<String> newResult = new ArrayList<String>();
 
             if (newCSV != null) {
@@ -42,10 +43,12 @@ public class Converter {
                     if (!(splitData[i] == null) || !(splitData[i].length() == 0)) {
                         newResult.add(splitData[i].trim());
                         llist.append(splitData[i].trim());
+                        stackie.push(splitData[i].trim());
                     }
                 }
             }
     llist.printList();
+            stackie.pop();
         return llist;
 
             //TODO: create function to get individual elements of arraylist
