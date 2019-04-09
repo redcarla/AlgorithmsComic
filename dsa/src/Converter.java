@@ -36,6 +36,7 @@ public class Converter {
         LinkedList llist = new LinkedList();
         Stack stackie = new Stack();
         ArrayList<String> newResult = new ArrayList<String>();
+        Queue q = new Queue();
 
             if (newCSV != null) {
                 String[] splitData = newCSV.split("\\s*,\\s*");
@@ -44,11 +45,13 @@ public class Converter {
                         newResult.add(splitData[i].trim());
                         llist.append(splitData[i].trim());
                         stackie.push(splitData[i].trim());
+                        q.enqueue(splitData[i].trim());
                     }
                 }
             }
     llist.printList();
             stackie.pop();
+            System.out.println(q.dequeue());
         return llist;
 
             //TODO: create function to get individual elements of arraylist
