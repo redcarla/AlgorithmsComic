@@ -3,10 +3,10 @@ public class Stack {
     StackNode root;
 
     static class StackNode {
-        int data;
+        String data;
         StackNode next;
 
-        StackNode(int data) {
+        StackNode(String data) {
             this.data = data;
         }
     }
@@ -17,7 +17,7 @@ public class Stack {
         } else return false;
     }
 
-    public void push(int data) {
+    public void push(String data) {
         StackNode newNode = new StackNode(data);
 
         if (root == null) {
@@ -30,8 +30,8 @@ public class Stack {
         System.out.println(data + " pushed to stack");
     }
 
-    public int pop() {
-        int popped = Integer.MIN_VALUE;
+    public String pop() {
+        String popped = "1";
         if (root == null) {
             System.out.println("Stack is Empty");
         } else {
@@ -41,10 +41,11 @@ public class Stack {
         return popped;
     }
 
-    public int peek() {
+    public String peek() {
         if (root == null) {
             System.out.println("Stack is empty");
-            return Integer.MIN_VALUE;
+            //return String.MIN_VALUE;
+            return "1";
         } else {
             return root.data;
         }
@@ -55,8 +56,8 @@ public class Stack {
 
         Stack stack = new Stack();
 
-        stack.push(990);
-        stack.push(400);
+        stack.push("test");
+        stack.push("test");
 
         System.out.println(stack.pop() + " popped from stack");
 
