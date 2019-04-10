@@ -36,6 +36,7 @@ public class Converter {
         Stack stackie = new Stack();                                //new STACK
         Queue q = new Queue();                                      //new QUEUE
         DLL dll = new DLL();                                        //new DOUBLY LINKED LIST
+        BST bst = new BST();                                        //new BINARY SEARCH TREE
 
 
         if (newCSV != null) {
@@ -46,10 +47,20 @@ public class Converter {
                     dll.append(splitData[i].trim());                //add to doubly linked list
                     stackie.push(splitData[i].trim());              //add to stack
                     q.enqueue(splitData[i].trim());                 //add to queue
+                    bst.add(splitData[i].trim());                   //add to binary search tree
                 }
             }
         }
-        System.out.println("Doubly linked list");
+        System.out.print("Pre Order traversal:");
+        bst.preOrder();
+        System.out.println();
+        System.out.print("Post order:");
+        bst.postOrder();
+        System.out.println();
+        System.out.print("In order order:");
+        bst.inOrder();
+
+ /*       System.out.println("Doubly linked list");
         dll.printlist(dll.head);                                    //printing
         System.out.println("\n");
         System.out.println("Linked List:");
@@ -70,6 +81,8 @@ public class Converter {
             catch (NullPointerException d) {                        // to get rid of any NPE's
 
             }
-        }
+        }*/
+
+
     }
 }

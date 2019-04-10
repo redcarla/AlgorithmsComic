@@ -1,80 +1,79 @@
-class Node<T extends Comparable<T>> {
-    private T value;
-    private Node<T> left;
-    private Node<T> right;
+public class BST<T extends Comparable<T>> {
+    TreeNode<T> root;
 
-    public Node(T value) {
-        this.value = value;
+    public BST() {
+        super();
+        this.root = new TreeNode<T>();
     }
 
-    public T getValue() {
-        return value;
+    public BST(T o) {
+        super();
+        TreeNode<T> node = new TreeNode<T>(o);
+        this.root = node;
     }
 
-    public void setValue(T value) {
-        this.value = value;
+
+    public void add(T o) {
+        if (root == null) {
+            root = new TreeNode<T>(o);
+        } else {
+            root.insert(o);
+        }
     }
 
-    public Node<T> getLeft() {
-        return left;
+    public boolean isMember (TreeNode<T> node, T o) {
+        if(node == null) return false;
+
+        if (node.element.compareTo(o) == 0) {
+            return true;
+        } else if (node.element.compareTo(o) < 0) {
+            isMember(node.right, o);
+        } else {
+            isMember(node.left, o);
+        }
+        return false;
     }
 
-    public void setLeft(Node<T> left) {
-        this.left = left;
+    public void preOrderHelper (TreeNode<T> node) {
+        if (node != null) {
+            node.visit();
+            preOrderHelper(node.left);
+            preOrderHelper(node.right);
+        }
     }
 
-    public Node<T> getRight() {
-        return right;
+    public void inOrderHelper(TreeNode<T> node) {
+        if (node != null) {
+            inOrderHelper(node.left);
+            node.visit();
+            inOrderHelper(node.right);
+        }
     }
 
-    public void setRight(Node<T> right) {
-        this.right = right;
+    public void postOrderHelper(TreeNode<T> node) {
+        if (node != null) {
+            postOrderHelper(node.left);
+            postOrderHelper(node.right);
+            node.visit();
+        }
     }
+
+    public void preOrder() {
+        if (root != null) {
+            preOrderHelper(root);
+        }
+    }
+
+    public void inOrder() {
+        if (root != null) {
+            inOrderHelper(root);
+        }
+    }
+
+    public void postOrder() {
+        if (root != null) {
+            postOrderHelper(root);
+        }
+    }
+
 }
-
-
-class BST <T extends Comparable<T>> {
-    private Node<T> root;
-
-    public BST(T value) {
-        root = new Node<T>(value);
-    }
-
-    public void insert(T value) {
-        Node<T> node = new Node<T>(value);
-
-        private void insert(Node node, T value){
-            if(value.compareTo(node.value) < 0){  //if new value less than parent node
-                if(node.left == null)  //if left null then add
-                    node.left = new Node(value);
-                else
-                    insert(node.left,value);  //if left not null then recursive call
-            }
-            else if(value.compareTo(node.value) >= 0){  //if new value same or greater than parent node
-                if(node.right == null)  //if right null then add
-                    node.right = new Node(value);
-                else
-                    insert(node.right,value);  //if right not null then recursive call
-            }
-        }
-
-        /**
-         * Returns the value of the root
-         * @return
-         */
-        public T peek(){
-            return root.value;
-        }
-
-        /**
-         * Checks if tree is empty or not
-         * @return
-         */
-        public boolean isEmpty(){
-            return (root == null)? true : false;
-        }
-    }
-    }
-}
-
-
