@@ -12,7 +12,7 @@ public class Converter {
 
         try {
             String newLine;                                         //whole line from csv
-            newBuffer = new BufferedReader(new FileReader("C:\\Users\\ramon\\Documents\\GitHub\\AlgorithmsComic\\AlgorithmsComic\\dsa\\src\\dc-wikia-data.csv"));
+            newBuffer = new BufferedReader(new FileReader("C:\\Users\\ramon\\Documents\\AlgorithmsComic\\dsa\\src\\dc-wikia-data.csv"));
 
 
             while ((newLine = newBuffer.readLine()) != null) {
@@ -45,41 +45,62 @@ public class Converter {
 
         if (newCSV != null) {
             String[] splitData = newCSV.split("\\s*,\\s*");   //split on comma
+            DcChar character = new DcChar();
+            int max = splitData.length;
+            character.setName(splitData[1].trim());
+            character.setId(splitData[3].trim());
+            character.setAlign(splitData[4].trim());
+            character.setEye(splitData[5].trim());
+            character.setHair(splitData[6].trim());
+            if(max >= 7){
+                character.setSex(splitData[7].trim());
+            } if(max > 8) {
+                character.setGSM(splitData[8].trim());
+            } if(max > 9) {
+                character.setAlive(splitData[9].trim());
+            } if(max > 10) {
+                character.setappearance(splitData[10].trim());
+            } if(max > 11) {
+                System.out.println(max);
+                character.setFAppearance(splitData[11].trim());
+            } if(max > 12) {
+                character.setYear(splitData[12].trim());
+            }
+
+            listy.append(character);
+            stackie.push(character);
+            q.enqueue(character);
+            System.out.println(stackie.pop());
+            /*
             for (int i = 0; i < splitData.length; i++) {
+
                 if (!(splitData[i] == null) || !(splitData[i].length() == 0) || splitData[i].isEmpty()) {
-                    //System.out.println(splitData[i]);
-
-                    if(i ==2) {
-                        DcChar character = new DcChar();
-                        character.setName(splitData[1]);
-                        charac.add(character);
-
-                        listy.append(character);
-                    }
+                    System.out.println(splitData[i]);
 
 
-                    /*//System.out.println(character.getName());
 
-                    //q.enqueue(character.getName());
+                    System.out.println(character.getName());
+
+                    q.enqueue(character.getName());
                     llist.append(splitData[i].trim());              //add to linked list
                     dll.append(splitData[i].trim());                //add to doubly linked list
                     stackie.push(splitData[i].trim());              //add to stack
                     q.enqueue(splitData[i].trim());                 //add to queue
-                    bst.insert(splitData[i].trim());    */               //add to binary search tree
+                    bst.insert(splitData[i].trim());                   //add to binary search tree
                 }
             }
         }
-        //System.out.println("LList: ");
+        /*System.out.println("LList: ");
         for (DcChar chara : charac){
             System.out.println(chara.getName());
         }
-          //  llist.printList();
+        llist.printList();
         listy.printList();
-        //System.out.println();
-        //System.out.println("DLL:");
-          //  dll.printlist(dll.head);
+        System.out.println();
+        System.out.println("DLL:");
+        dll.printlist(dll.head);
 
-        /*System.out.println("\n Stack:");
+        System.out.println("\n Stack:");
         for (int i = 0; i < 12; i++) {                              //loop through each one to print
             try {
                 System.out.println(stackie.pop());
@@ -89,7 +110,6 @@ public class Converter {
 
             }
         }
-/*
 
         System.out.println("\n Queue:");
         for (int i = 0; i < 12; i++) {                              //loop through each one to print
@@ -100,11 +120,12 @@ public class Converter {
             catch (NullPointerException d) {                        // to get rid of any NPE's
 
             }
-        } /*
+        }
         System.out.println("BinaryST:");
         bst.preOrder();
-*/
-        }
+
+        }*/
 
 
     }
+    }}

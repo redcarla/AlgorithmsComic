@@ -1,6 +1,6 @@
 public class DcChar {
     String name;
-    int id;
+    String id;
     String sex;
     String align;
     String eye;
@@ -21,10 +21,10 @@ public class DcChar {
     public void setName(String name){
         this.name = name;
     }
-    public void setId(int id){
+    public void setId(String id){
         this.id = id;
     }
-    public int getId(){
+    public String getId(){
         return id;
     }
 
@@ -101,6 +101,9 @@ public class DcChar {
     }
 
     @Override public String toString() {
-        return "Player: " + name;
+        return "Name: " + name + "\nHair: " + hair + "\nAlignment: " + align
+                + "\nsex: " + sex + "\nEye color: " + eye + "\nAlive: " + alive + "\nappearance: " + appe
+                + "\nFirst appearance: " + fappe + "\nyear: " + year;
+
     }
 }
