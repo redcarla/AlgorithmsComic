@@ -5,14 +5,11 @@ class QNode<T>
 
     // constructor to create a new linked list node 
     public QNode(T key) {
-        this.key = this.key;
+        this.key = key;
         this.next = null;
     }
 }
 
-// A class to represent a queue 
-//The queue, front stores the front node of LL and rear stores ths 
-//last node of LL 
 class Queue<T>
 {
     QNode front, rear;
@@ -54,12 +51,6 @@ class Queue<T>
         // If front becomes NULL, then change rear also as NULL 
         if (this.front == null)
             this.rear = null;
-        System.out.println( "\n"+ temp + "queueue is working.");
         return temp;
     }
 }
-
-
-// Driver class 
-
-// This code is contributed by Gaurav Miglani 

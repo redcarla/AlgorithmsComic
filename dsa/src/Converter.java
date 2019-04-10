@@ -41,19 +41,27 @@ public class Converter {
             if (newCSV != null) {
                 String[] splitData = newCSV.split("\\s*,\\s*");
                 for (int i = 0; i < splitData.length; i++) {
-                    if (!(splitData[i] == null) || !(splitData[i].length() == 0)) {
-                        newResult.add(splitData[i].trim());
-                        llist.append(splitData[i].trim());
-                        stackie.push(splitData[i].trim());
+                    if (!(splitData[i] == null) || !(splitData[i].length() == 0) || splitData[i].isEmpty()) {
+                        //newResult.add(splitData[i].trim());
+                        //llist.append(splitData[i].trim());
+                        //stackie.push(splitData[i].trim());
                         q.enqueue(splitData[i].trim());
                     }
                 }
             }
-    llist.printList();
-            stackie.pop();
-            System.out.println(q.dequeue());
-        return llist;
+    //llist.printList();
+            for(int i=0; i < 12; i++) {
+                try {
+                    System.out.println(stackie.pop());
+                    //System.out.println(q.dequeue().key);
+                }
+                // to get rid of any NPE's
+                catch(NullPointerException d){
 
+                }
+
+            }
+        return llist;
             //TODO: create function to get individual elements of arraylist
     }
 

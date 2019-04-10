@@ -1,69 +1,61 @@
-public class Stack {
 
-    StackNode root;
+public class Stack<t> {
+    private node start = null,current = null;
 
-    static class StackNode {
-        String data;
-        StackNode next;
+    int count = 0;
 
-        StackNode(String data) {
-            this.data = data;
+    public Stack(){
+        start = null;
+        current = null;
+        count = 0;
+
+    }
+
+
+    private class node{
+        protected t item;
+        protected node link;
+
+        node(t item,node link){
+            this.item = item;
+            this.link = link;
         }
     }
 
-    public boolean isEmpty() {
-        if (root == null) {
-            return true;
-        } else return false;
+
+    public void push(t item){
+        node  temp = new  node(item,start);
+        start = temp;
+        count++;
     }
 
-    public void push(String data) {
-        StackNode newNode = new StackNode(data);
 
-        if (root == null) {
-            root = newNode;
-        } else {
-            StackNode temp = root;
-            root = newNode;
-            newNode.next = temp;
+
+    /**
+     * method to get value form stack and then remove it
+     */
+    public t pop(){
+        t x = null;
+        if(start!= null){
+            x = start.item;
+            start = start.link;
+            count--;
         }
-        System.out.println(data + " pushed to stack");
+        return x;
     }
 
-    public String pop() {
-        String popped = "1";
-        if (root == null) {
-            System.out.println("Stack is Empty");
-        } else {
-            popped = root.data;
-            root = root.next;
-        }
-        return popped;
+    /**
+     * peeking top values of stack without removing the value
+     */
+    public t peek() {
+        t x =  start.item;
+        return x;
     }
 
-    public String peek() {
-        if (root == null) {
-            System.out.println("Stack is empty");
-            //return String.MIN_VALUE;
-            return "1";
-        } else {
-            return root.data;
-        }
-
+    /**
+     * getting length of stack
+     */
+    public int length() {
+        return count;
     }
-
-    public static void main(String[] args) {
-
-        Stack stack = new Stack();
-
-        stack.push("test");
-        stack.push("test");
-
-        System.out.println(stack.pop() + " popped from stack");
-
-        System.out.println("Top element is " + stack.peek());
-
-
-    }
-
 }
