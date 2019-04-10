@@ -51,8 +51,12 @@ public class Converter {
                 }
             }
         }
+        System.out.println("LList: ");
+            llist.printList();
+        System.out.println();
+        System.out.println("DLL:");
+            dll.printlist(dll.head);
 
-/*
         System.out.println("\n Stack:");
         for (int i = 0; i < 12; i++) {                              //loop through each one to print
             System.out.println(stackie.pop());
@@ -68,7 +72,7 @@ public class Converter {
             catch (NullPointerException d) {                        // to get rid of any NPE's
 
             }
-        }*/
+        }
         System.out.println("BinaryST:");
         bst.preOrder();
 
