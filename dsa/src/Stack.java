@@ -56,6 +56,7 @@ public class Stack<t> {
      * getting length of stack
      */
     public int length() {
+
         return count;
     }
 }

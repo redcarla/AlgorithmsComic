@@ -37,7 +37,7 @@ class Queue<T>
         this.rear = temp;
     }
 
-    // Method to remove an key from queue.   
+    // Method to remove a key from queue.
     QNode dequeue()
     {
         // If queue is empty, return NULL. 
