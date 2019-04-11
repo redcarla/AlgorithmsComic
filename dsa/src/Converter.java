@@ -38,7 +38,7 @@ public class Converter {
         listy = new LinkedList<>();                        //new LINKED LIST
         Stack stackie = new Stack();                                //new STACK
         Queue q = new Queue();                                      //new QUEUE
-        DLL dll = new DLL();                                        //new DOUBLY LINKED LIST
+        DoublyLL dll = new DoublyLL();                                        //new DOUBLY LINKED LIST
         BinaryST bst = new BinaryST();
         charac = new ArrayList<>();
 
@@ -84,7 +84,7 @@ public class Converter {
                     q.enqueue(character.getName());
                     llist.append(splitData[i].trim());              //add to linked list
                     dll.append(splitData[i].trim());                //add to doubly linked list
-                    stackie.push(splitData[i].trim());              //add to stack
+                    stackie.prepend(splitData[i].trim());              //add to stack
                     q.enqueue(splitData[i].trim());                 //add to queue
                     bst.insert(splitData[i].trim());                   //add to binary search tree
                 }
@@ -97,7 +97,7 @@ public class Converter {
         llist.printList();
         listy.printList();
         System.out.println();
-        System.out.println("DLL:");
+        System.out.println("DoublyLL:");
         dll.printlist(dll.head);
 
         System.out.println("\n Stack:");
@@ -125,6 +125,7 @@ public class Converter {
         bst.preOrder();
 
         }*/
+
 
 
     }

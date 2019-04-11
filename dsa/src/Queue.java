@@ -1,17 +1,18 @@
-class QNode<T>
-{
-    T key;
-    QNode next;
 
-    // constructor to create a new linked list node 
-    public QNode(T key) {
-        this.key = key;
-        this.next = null;
-    }
-}
 
 class Queue<T>
 {
+    private class QNode<T>
+    {
+        T key;
+        QNode next;
+
+        // constructor to create a new linked list node
+        public QNode(T key) {
+            this.key = key;
+            this.next = null;
+        }
+    }
     QNode front, rear;
 
     public Queue() {
@@ -38,7 +39,7 @@ class Queue<T>
     }
 
     // Method to remove a key from queue.
-    QNode dequeue()
+    public T dequeue()
     {
         // If queue is empty, return NULL. 
         if (this.front == null)
@@ -51,6 +52,6 @@ class Queue<T>
         // If front becomes NULL, then change rear also as NULL 
         if (this.front == null)
             this.rear = null;
-        return temp;
+        return (T) temp.key;
     }
 }

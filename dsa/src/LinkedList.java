@@ -4,17 +4,10 @@ import java.util.Scanner;
 class LinkedList<T> {
     Node head;                                      // head of list
 
-    //TODO: move this
-    public static void main(String[] args) {
-                                                     //testing the stuff
-        LinkedList llist = new LinkedList();
 
 
-        System.out.println("\nCreated Linked list is: ");
-        llist.printList();
-    }
 
-    public void push(T new_data)                    //push new node to the front of the list
+    public void prepend(T new_data)                    //prepend new node to the front of the list
     {
 
         Node new_node = new Node(new_data);         //initialize & enter data
