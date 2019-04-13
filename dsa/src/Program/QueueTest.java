@@ -1,4 +1,4 @@
-package Tests;
+package Program;
 
 import Program.DcChar;
 import Program.Queue;

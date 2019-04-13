@@ -1,4 +1,4 @@
-package Tests;
+package Program;
 
 import Program.Converter;
 import Program.DcChar;
