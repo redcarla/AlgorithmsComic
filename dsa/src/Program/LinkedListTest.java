@@ -1,4 +1,4 @@
-package Tests;
+package Program;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +16,7 @@ class LinkedListTest {
         DcChar Char3 = new DcChar();
         l.append(Char1);
         l.prepend(Char2);
+        l.insertAfter(l.head, Char3);
         l.printList();
     }
 }

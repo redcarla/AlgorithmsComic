@@ -17,7 +17,7 @@ public class Converter {
 
         try {
             String newLine;                                         //whole line from csv
-            newBuffer = new BufferedReader(new FileReader("C:\\Users\\ramon\\Documents\\GitHub\\AlgorithmsComic\\AlgorithmsComic\\dsa\\src\\Program\\dc-wikia-data.csv"));
+            newBuffer = new BufferedReader(new FileReader("/Users/carlacatherine/Downloads/dsa/src/Program/dc-wikia-data.csv"));
 
             while ((newLine = newBuffer.readLine()) != null) {
                 Converter1(newLine);                                 //converted the new line with Converter

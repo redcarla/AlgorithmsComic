@@ -1,19 +1,19 @@
-package Tests;
+package Program;
 
-import Program.*;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-class BinarySearchAlgoTest {
+class InsertionSortAlgoTest {
 
     @Test
-    void binSearch() throws Exception {
-        BinarySearchAlgo b = new BinarySearchAlgo();
+    void insSort() throws Exception{
+        InsertionSortAlgo i = new InsertionSortAlgo();
         Converter converter = new Converter();
         converter.Converter();
         DcChar[] t = converter.returnArray();
-        DcChar Ramon = t[750];
-        b.search(t, Ramon);
-    }
+        i.insSort(t);
 
+
+    }
 }
