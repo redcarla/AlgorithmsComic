@@ -1,42 +1,26 @@
 package Program;
 
 public class Stack<t> {
-    private node start = null,current = null;
-
     int count = 0;
+    private node start = null, current = null;
 
-    public Stack(){
+    public Stack() {
         start = null;
         current = null;
         count = 0;
 
     }
 
-
-    private class node{
-        protected t item;
-        protected node link;
-
-        node(t item,node link){
-            this.item = item;
-            this.link = link;
-        }
-    }
-
-
-    public void push(t item){
-        node  temp = new  node(item,start);
+    public void push(t item) {
+        node temp = new node(item, start);
         start = temp;
         count++;
     }
 
-
-
-
     //method to get value form stack and then remove it
-    public t pop(){
+    public t pop() {
         t x = null;
-        if(start!= null){
+        if (start != null) {
             x = start.item;
             start = start.link;
             count--;
@@ -44,17 +28,26 @@ public class Stack<t> {
         return x;
     }
 
-
     //peeking top values of stack without removing the value
     public t peek() {
-        t x =  start.item;
+        t x = start.item;
         return x;
     }
-
-     //getting length of stack
 
     public int length() {
 
         return count;
+    }
+
+    //getting length of stack
+
+    private class node {
+        protected t item;
+        protected node link;
+
+        node(t item, node link) {
+            this.item = item;
+            this.link = link;
+        }
     }
 }

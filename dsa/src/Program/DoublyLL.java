@@ -2,6 +2,7 @@ package Program;
 
 class DoublyLL<T> {
     Node head;                                                     // head of list
+
     public void prepend(T new_data)                                  //add to front
     {
         Node new_Node = new Node(new_data);                      //allocate data
@@ -53,7 +54,7 @@ class DoublyLL<T> {
             last = node;
             node = node.next;
         }
-       System.out.println("\n");
+        System.out.println("\n");
         System.out.println("Going backwards:");
         while (last != null) {
             System.out.print(last.data + " ");
@@ -70,7 +71,7 @@ class DoublyLL<T> {
         Node(T d) {                                                    //constructor
             data = d;
         }
-                                                                    // next and previous node null by default
+        // next and previous node null by default
     }
 }
 
