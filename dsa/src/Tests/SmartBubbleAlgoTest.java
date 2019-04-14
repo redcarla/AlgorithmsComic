@@ -10,9 +10,8 @@ class SmartBubbleAlgoTest {
     void smartBubble() throws Exception {
         SmartBubbleAlgo b = new SmartBubbleAlgo();
         Converter converter = new Converter();
-        converter.Converter();
+        converter.Converter("marvel");
         DcChar[] t = converter.returnArray();
-        DcChar Ramon = t[500];
         b.smartBubble(t);
     }
 

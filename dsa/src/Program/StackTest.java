@@ -19,7 +19,7 @@ class StackTest {
     public void push() throws Exception{
         b = new Stack();
         Converter converter = new Converter();
-        converter.Converter();
+        converter.Converter("dc");
         DcChar[] t = converter.returnArray();
         for(int i = 0; i < t.length; i++){
             b.push(t[i]);

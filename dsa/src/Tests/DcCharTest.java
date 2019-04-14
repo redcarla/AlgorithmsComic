@@ -153,7 +153,7 @@ class DcCharTest {
     void search() throws Exception {
         SequentialSearch b = new SequentialSearch();
         Converter converter = new Converter();
-        converter.Converter();
+        converter.Converter("dc");
         DcChar[] t = converter.returnArray();
         DcChar Ramon = t[500];
         b.search(t, Ramon);

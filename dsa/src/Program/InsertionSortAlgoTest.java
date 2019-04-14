@@ -10,7 +10,7 @@ class InsertionSortAlgoTest {
     void insSort() throws Exception{
         InsertionSortAlgo i = new InsertionSortAlgo();
         Converter converter = new Converter();
-        converter.Converter();
+        converter.Converter("dc");
         DcChar[] t = converter.returnArray();
         i.insSort(t);
 

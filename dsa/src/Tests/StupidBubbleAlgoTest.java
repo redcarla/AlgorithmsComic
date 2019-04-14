@@ -13,7 +13,7 @@ class StupidBubbleAlgoTest {
     void setUp() throws Exception {
         
         Converter converter2 = new Converter();
-        converter2.Converter();
+        converter2.Converter("dc");
         
     }
 

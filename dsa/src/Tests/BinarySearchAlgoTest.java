@@ -10,7 +10,7 @@ class BinarySearchAlgoTest {
     void binSearch() throws Exception {
         BinarySearchAlgo b = new BinarySearchAlgo();
         Converter converter = new Converter();
-        converter.Converter();
+        converter.Converter("marvel");
         DcChar[] t = converter.returnArray();
         DcChar Ramon = t[750];
         b.search(t, Ramon);

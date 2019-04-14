@@ -7,17 +7,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Converter {
-    private static ArrayList<DcChar> charac;
-    private static LinkedList<DcChar> listy;
-    public static DcChar[] array = new DcChar[6897];
+    public static DcChar[] array;
+
     private static int length;
-    public static void Converter() throws Exception {
+    public static void Converter(String type) throws Exception {
+        String fileName = "";
+        type = type.toUpperCase();
+        if (type.equals("MARVEL")){
+            array = new DcChar[16377];
+            fileName = "C:\\Users\\ramon\\Documents\\dsaa\\dsa\\src\\Program\\marvel-wikia-data.csv";
+        } else if (type.equals("DC")){
+            array = new DcChar[6897];
+            fileName = "C:\\Users\\ramon\\Documents\\dsaa\\dsa\\src\\Program\\dc-wikia-data.csv";
+        }
 
         BufferedReader newBuffer = null;
 
         try {
             String newLine;                                         //whole line from csv
-            newBuffer = new BufferedReader(new FileReader("/Users/carlacatherine/Downloads/dsa/src/Program/dc-wikia-data.csv"));
+            newBuffer = new BufferedReader(new FileReader(fileName));
 
             while ((newLine = newBuffer.readLine()) != null) {
                 Converter1(newLine);                                 //converted the new line with Converter
@@ -43,11 +51,21 @@ public class Converter {
             String[] splitData = newCSV.split("\\s*,\\s*");   //split on comma
             DcChar character = new DcChar();
             int max = splitData.length;
-            character.setName(splitData[1].trim());
-            character.setId(splitData[3].trim());
-            character.setAlign(splitData[4].trim());
-            character.setEye(splitData[5].trim());
-            character.setHair(splitData[6].trim());
+            if(max >= 1) {
+                character.setName(splitData[1].trim());
+            }
+            if(max < 3) {
+                character.setId(splitData[3].trim());
+            }
+            if(max >= 4) {
+                character.setAlign(splitData[4].trim());
+            }
+            if(max >= 5) {
+                character.setEye(splitData[5].trim());
+            }
+            if(max >= 6) {
+                character.setHair(splitData[6].trim());
+            }
             if(max >= 7){
                 character.setSex(splitData[7].trim());
             } if(max > 8) {

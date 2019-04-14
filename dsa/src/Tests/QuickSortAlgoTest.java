@@ -12,8 +12,9 @@ class QuickSortAlgoTest {
     public void QuickSort() throws Exception {
         QuickSortAlgo b = new QuickSortAlgo();
         Converter converter = new Converter();
-        converter.Converter();
+        converter.Converter("marvel");
         DcChar[] t = converter.returnArray();
         b.quickSort(t);
+        converter.printArray();
     }
 }
