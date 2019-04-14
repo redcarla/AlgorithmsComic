@@ -7,10 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProgramTest {
 
     @Test
-    void main() {
-        Converter c = new Converter();
-        LinkedList l = new LinkedList();
-        DoublyLL d = new DoublyLL();
+    void main() throws Exception {
+        Program p = new Program();
+        p.fill("dc");
+        p.print();
+
 
     }
 

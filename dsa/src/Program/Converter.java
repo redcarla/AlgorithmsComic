@@ -90,7 +90,7 @@ public class Converter {
     }
 
     public static void printArray(){
-        InsertionSortAlgo t = new InsertionSortAlgo();
+        //InsertionSortAlgo t = new InsertionSortAlgo();
         for(int i=0; i< array.length; i++){
             try {if(array[i].getName().isEmpty()){ System.out.println("er is een null");}}
             catch (NullPointerException e){System.out.println(i);}
@@ -98,7 +98,7 @@ public class Converter {
         }
 
 
-        t.insSort(array);
+        //t.insSort(array);
         // t.smartBubble(array);
 
         for(int i=0; i < array.length; i++){
