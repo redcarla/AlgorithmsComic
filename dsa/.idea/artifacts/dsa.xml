@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="dsa">
+    <output-path>$PROJECT_DIR$/out/artifacts/dsa</output-path>
+    <root id="root">
+      <element id="archive" name="dsa.jar">
+        <element id="module-output" name="dsa" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
