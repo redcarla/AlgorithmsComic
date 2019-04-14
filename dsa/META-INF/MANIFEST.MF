@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: JUnit4 JUnit5.2 junit-4.12
+Main-Class: Program.Program
+
