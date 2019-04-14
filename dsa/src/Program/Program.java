@@ -11,12 +11,14 @@ public class Program {
         //create
         Program p = new Program();
         //fill
-        p.fill("marvel");
+        p.fill("dc");
 
         //print
         p.print();
         }
 
+
+    // method that fill al the datastructures with data
     public void fill(String fileName) throws Exception {
         converter.Converter(fileName);
         converter.printArray();
@@ -26,11 +28,11 @@ public class Program {
             q.enqueue(t[i]);
             s.push(t[i]);
             dl.append(t[i]);
-            //bst.insert(t[i]);
+            bst.insert(t[i]);
 
         }
     }
-
+    // method that prints out data from each datastructure
     public void print(){
         linkedlist.printList();
         System.out.println(q.dequeue());

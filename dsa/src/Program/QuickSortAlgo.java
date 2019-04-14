@@ -5,10 +5,6 @@ public class QuickSortAlgo
 
     public <T extends Comparable<T>> void quickSort(T[] a) {
         quickSort2(a, 0, a.length-1);
-
-        for (int i = 0; i < a.length; i++) {
-            //System.out.println(a[i] + " ");
-        }
     }
 
     public <T extends Comparable<T>> void quickSort2(T[] a, int lo, int hi) {

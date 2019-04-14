@@ -32,9 +32,8 @@ public class Stack<t> {
 
 
 
-    /**
-     * method to get value form stack and then remove it
-     */
+
+    //method to get value form stack and then remove it
     public t pop(){
         t x = null;
         if(start!= null){
@@ -45,17 +44,15 @@ public class Stack<t> {
         return x;
     }
 
-    /**
-     * peeking top values of stack without removing the value
-     */
+
+    //peeking top values of stack without removing the value
     public t peek() {
         t x =  start.item;
         return x;
     }
 
-    /**
-     * getting length of stack
-     */
+     //getting length of stack
+
     public int length() {
 
         return count;

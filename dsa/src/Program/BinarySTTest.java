@@ -25,6 +25,7 @@ class BinarySTTest {
 
     @Test
     void isEmpty() {
+        BinaryST d = new BinaryST<>();
         boolean result = d.isEmpty();
         assertEquals(result, true);
     }

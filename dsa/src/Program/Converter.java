@@ -15,10 +15,10 @@ public class Converter {
         type = type.toUpperCase();
         if (type.equals("MARVEL")){
             array = new DcChar[16377];
-            fileName = "C:\\Users\\ramon\\Documents\\dsaa\\dsa\\src\\Program\\marvel-wikia-data.csv";
+            fileName = "C:\\Users\\ramon\\Documents\\GitHub\\AlgorithmsComic\\AlgorithmsComic\\dsa\\src\\Program\\marvel-wikia-data.csv";
         } else if (type.equals("DC")){
             array = new DcChar[6897];
-            fileName = "C:\\Users\\ramon\\Documents\\dsaa\\dsa\\src\\Program\\dc-wikia-data.csv";
+            fileName = "C:\\Users\\ramon\\Documents\\GitHub\\AlgorithmsComic\\AlgorithmsComic\\dsa\\src\\Program\\dc-wikia-data.csv";
         }
 
         BufferedReader newBuffer = null;
@@ -40,7 +40,6 @@ public class Converter {
                 newException.printStackTrace();
             }
         }
-        //printArray();
     }
 
 
@@ -90,18 +89,15 @@ public class Converter {
     }
 
     public static void printArray(){
-        //InsertionSortAlgo t = new InsertionSortAlgo();
         for(int i=0; i< array.length; i++){
-            try {if(array[i].getName().isEmpty()){ System.out.println("er is een null");}}
-            catch (NullPointerException e){System.out.println(i);}
-            //System.out.println("current element"+ i + " is: " + array[i].getName());
-        }
-
-
-        //t.insSort(array);
-        // t.smartBubble(array);
-
-        for(int i=0; i < array.length; i++){
+            try {
+                if(array[i].getName().isEmpty()){
+                    System.out.println("er is een null");
+                }
+            }
+            catch (
+                    NullPointerException e){System.out.println(i);
+            }
             System.out.println("current element is: " + array[i].getName());
         }
     }
