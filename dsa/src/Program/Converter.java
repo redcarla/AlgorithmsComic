@@ -13,10 +13,10 @@ public class Converter {
         type = type.toUpperCase();
         if (type.equals("MARVEL")) {
             array = new DcChar[16377];
-            fileName = "src/marvel-wikia-data.csv";
+            fileName = "Program/marvel-wikia-data.csv";
         } else if (type.equals("DC")) {
             array = new DcChar[6897];
-            fileName = "src/dc-wikia-data.csv";
+            fileName = "Program/dc-wikia-data.csv";
         }
 
         BufferedReader newBuffer = null;
