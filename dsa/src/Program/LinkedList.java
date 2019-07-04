@@ -1,7 +1,7 @@
 package Program;
 
 public class LinkedList<T> {
-    Node head;                                      // head of list
+    public Node head;                                      // head of list
     int length = 0;
 
     public void prepend(T new_data)                    //prepend new node to the front of the list

@@ -5,18 +5,22 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Converter {
-    public static DcChar[] array;
-    private static int length;
+    public  DcChar[] array;
+    private int length;
 
-    public static void Converter(String type) throws Exception {
+    public  void Converter(String type) throws Exception {
+        if(array != null)
+        {
+            array = null;
+        }
         String fileName = "";
         type = type.toUpperCase();
         if (type.equals("MARVEL")) {
             array = new DcChar[16377];
-            fileName = "Program/marvel-wikia-data.csv";
+            fileName = "marvel-wikia-data.csv";
         } else if (type.equals("DC")) {
             array = new DcChar[6897];
-            fileName = "Program/dc-wikia-data.csv";
+            fileName = "dc-wikia-data.csv";
         }
 
         BufferedReader newBuffer = null;
@@ -40,7 +44,7 @@ public class Converter {
         }
     }
 
-    public static void Converter1(String newCSV) throws Exception {                   //convert csv using split
+    public void Converter1(String newCSV) throws Exception {                   //convert csv using split
 
 
         if (newCSV != null) {
@@ -58,12 +62,15 @@ public class Converter {
             if (max > 10) {character.setappearance(splitData[10].trim());}
             if (max > 11) {character.setFAppearance(splitData[11].trim());}
             if (max > 12) {character.setYear(splitData[12].trim());}
-
-            array[length] = character;
+            if(length > 16375) {
+                array[length] = character;
+            } else{
+                array[length] = character;
+            }
         }
     }
 
-    public static void printArray() {                           //print all the characters
+    public void printArray() {                           //print all the characters
         for (int i = 0; i < array.length; i++) {
             try {
                 if (array[i].getName().isEmpty()) {
@@ -77,7 +84,7 @@ public class Converter {
         }
     }
 
-    public static DcChar[] returnArray() {                      //get array
+    public DcChar[] returnArray() {                      //get array
         return array;
     }
 }

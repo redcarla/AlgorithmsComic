@@ -1,7 +1,7 @@
 package Program;
 
-class DoublyLL<T> {
-    Node head;                                                     // head of list
+public class DoublyLL<T> {
+    public Node head;                                                     // head of list
 
     public void prepend(T new_data)                                  //add to front
     {
